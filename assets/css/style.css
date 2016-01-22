@@ -1,0 +1,86 @@
+/* the top of the page */
+
+.ceiling_top{
+	height: 100px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.ceiling{
+	box-sizing: border-box;
+	height: 15px;
+	width: 100%;
+	background-color: #00cc99;
+	border-bottom: 2px solid #009973;
+}
+
+.below_ceiling{
+	box-sizing: border-box;
+	height: 85px;
+	width: 890px;
+	border-bottom: 1px solid #00b386;
+	margin: 0 auto;
+}
+
+.logo_name{
+	width: 300px;
+	float: left;
+	font-size: 20px;
+	font-weight: 700;
+	color: #008060;
+	line-height: 85px;
+	margin:0;
+}
+
+.ceiling_nav{
+	width: 590px;
+	float: left;
+	margin: 0;
+}
+
+.ceiling_nav li{
+	display: block;
+	float: left;
+	list-style-type: none;
+	width: 100px;
+}
+
+/*.ceiling_nav li:nth-child(1){
+	width: 100px;
+} */
+
+.ceiling_nav a{
+	color: #525252;
+	line-height: 85px;
+	font-size: 16px;
+}
+
+/* the middle of the page */
+
+.main_middle{
+	width: 890px;
+	margin: 0 auto;
+	overflow: hidden;
+
+}
+
+.left_panel{
+	box-sizing: border-box;
+	width: 300px;
+	border-right: 1px solid #00b386;
+	float: left;
+}
+
+.content{
+	box-sizing: border-box;
+	width: 590px;
+	float: left;
+}
+
+/* the bottom of the page */
+
+.ground_bottom{
+	height: 100px;
+	width: 100%;
+	background-color: #e5fff9;
+}

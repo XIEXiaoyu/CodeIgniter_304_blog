@@ -1,5 +1,5 @@
 <?php
-public function asset_url(){
-	return base_url().'asset/';
+function asset_url(){
+	return base_url().'assets/';
 }
 ?>
