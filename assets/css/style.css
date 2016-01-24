@@ -76,6 +76,7 @@
 }
 
 .text_and_button{
+	height: 45px;
 	overflow: hidden;
 }
 
@@ -87,14 +88,27 @@
 	line-height: 44px;
 }
 
+._5{
+	border-bottom: none;
+}
+
 .button_in_left_panel{
 	float: left;
-	margin-top: 5px;
+	margin-top: 9px;
+	height: 25px;
+	font-size:14px;
+	padding: 0 12px;
+	line-height: 25px;
 }
 
 .info{
 	margin-top: 0px;
 	color: #999999;
+}
+
+.article_link{
+	display: block;
+	margin-bottom: 10px;
 }
 
 .content{
@@ -111,3 +125,11 @@
 	width: 100%;
 	background-color: #e5fff9;
 }
+
+.designer{
+	margin-bottom: 0px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 100px;
+}
+	

@@ -1,5 +1,5 @@
 		<div class="ground_bottom">
-			<p class="desinger">
+			<p class="designer">
 				Designed by Xie Jun
 			</p>
 		</div>
