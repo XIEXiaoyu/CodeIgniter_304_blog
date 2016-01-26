@@ -114,8 +114,16 @@
 .content{
 	box-sizing: border-box;
 	width: 724px;
-	padding-left: 30px;
+	padding-left: 35px;
 	float: left;
+	padding-top: 15px;
+}
+
+.blog_title{
+	font-size: 22px;
+	font-weight: 400;
+	margin-top: 10px;
+	color: #00995e;
 }
 
 /* the bottom of the page */
