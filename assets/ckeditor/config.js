@@ -36,6 +36,5 @@ CKEDITOR.editorConfig = function( config ) {
 	// Simplify the dialog windows.
 	config.removeDialogTabs = 'image:advanced;link:advanced';
 
-	// change the UI color (Xie Jun)
-	config.uiColor = #66AB16;
+	// config.uiColor = '#AADC6E';
 };

@@ -34,7 +34,10 @@
                 <textarea name="editor1" id="editor1" class="CKeditor"></textarea>
                 <script>
                     // Replace the <textarea id="editor1"> with a CKEditor instance, using default configuration.
-                    CKEDITOR.replace( 'editor1' );
+                    // CKEDITOR.replace( 'editor1' );
+                    CKEDITOR.replace( 'editor1', {
+                        uiColor: '#1bb11b'
+                    });
                 </script> 
                 <br>
                 <input class="btn btn-info" type="submit" value="Submit">          
