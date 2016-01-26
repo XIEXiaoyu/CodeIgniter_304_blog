@@ -29,7 +29,7 @@
                 <input type="text" name="category_id">
                 <br>
                 Blog title:<br>
-                <input type="text" name="blog_title">
+                <input class="form_blog_title" type="text" name="blog_title">
                 <br><br>               
                 <textarea name="editor1" id="editor1" class="CKeditor"></textarea>
                 <script>
