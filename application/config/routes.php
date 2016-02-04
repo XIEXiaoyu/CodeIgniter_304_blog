@@ -53,12 +53,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;
 
-$route['Blogs/(:any)'] = 'blogs/view/$1'; 
-$route['savetextarea'] = 'blogs/submit';
+$route['blogs/home'] = 'blogs/show/home'; 
+$route['blogs/create'] = 'blogs/create';
+$route['(:any)'] = 'blogs/show/home';
 
-// $route['Blogs/visit'] = 'blogs/home';
+
 // $route['news/create'] = 'news/create';
 // $route['news/(:any)'] = 'news/view/$1';
 // $route['news'] = 'news';
 // $route['(:any)'] = 'pages/view/$1';
 // $route['default_controller'] = 'pages/view';
+
+

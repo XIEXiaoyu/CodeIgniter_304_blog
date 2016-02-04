@@ -13,35 +13,8 @@
 	</div>
 
 	<div class="content">
-        <!-- if the $data contains the tag with value 'content_submitted', then the view should display the content, or it should display the CKeditor to let the user to provide the blog content -->
-        <?php 
-        if(isset($tag)) 
-        { // display the content 
-            echo $latest_blog->content; 
-        }
-        else 
-        { // display the CKeditor ?>
-            <form action="savetextarea.php" method="post">
-                Author:<br>
-                <input type="text" name="author">
-                <br>
-                Category id:<br>
-                <input type="text" name="category_id">
-                <br>
-                Blog title:<br>
-                <input class="form_blog_title" type="text" name="blog_title">
-                <br><br>               
-                <textarea name="editor1" id="editor1" class="CKeditor"></textarea>
-                <script>
-                    // Replace the <textarea id="editor1"> with a CKEditor instance, using default configuration.
-                    // CKEDITOR.replace( 'editor1' );
-                    CKEDITOR.replace( 'editor1', {
-                        uiColor: '#1bb11b'
-                    });
-                </script> 
-                <br>
-                <input class="btn btn-info" type="submit" value="Submit">          
-            </form>
-        <?php } ?>
+        <!-- show the latest blog -->
+        <?php echo $latest_blog[0]->content; ?>
+
 	</div>
 </div>

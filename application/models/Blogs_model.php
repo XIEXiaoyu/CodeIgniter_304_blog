@@ -22,17 +22,23 @@ class Blogs_model extends CI_model
 		return $query->result();
 	}
 
-	public function put_blog_content($author, $blog_title, $category_id, $blog_content, $created_at)
+	// insert a new piece of blog into the database table 'blogs'
+	public function set_blogs()
 	{
-		// insert into the blogs table
-		$data = array(
-		'author' => $author,
-		'title' => $title,
-		'category_id' => $category_id,
-        'content' => $content,
-        'created_at' => $created_at,
-		);
+		$this->load->helper('url');
 
+		// get the time that the blog is submitted
+		$created_at = time();
+
+		$data = array(
+        	'author' => $this->input->post('author'),
+        	'title' => $this->input->post('title'),
+        	'category_id' => $this->input->post('category_id'),
+        	'content' => $this->input->post('editor1'),
+        	'created_at' => $created_at,
+    	);
+		
+		// insert into the blogs table
 		$this->db->insert('blogs', $data);
 	}
 }

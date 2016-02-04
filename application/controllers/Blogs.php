@@ -9,7 +9,7 @@ class Blogs extends CI_Controller {
 		$this->load->helper('url_helper');
 	}
 
-	public function view($page='home')
+	public function show($page='home')
 	{
 		// Get all the categories including the category's name and its introdcution.
 		$_categories = $this->Categories_model->get_categories();
@@ -23,7 +23,7 @@ class Blogs extends CI_Controller {
 
 		$data['categories'] = $categories;
 
-		// Get all the latest blogs 
+		// Get all the latest blogs of all categories
 		$_latest_blogs = $this->Blogs_model->get_latest_blogs();
 
 		$latest_blogs = array();
@@ -44,26 +44,67 @@ class Blogs extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
-	public function submit()
+	// create a new blog
+	public function create()
 	{
-		// get the post values
-		$author = $_POST['author'];
-		$title = $_POST['blog_title'];
-		$category_id = $_POST['category_id'];		
-		$content = $_POST['editor1']; 
+		$this->load->helper('form');
 
-		// get the time that the blog is submitted
-		$created_at = time();
+		//set validation rules for the form input
+		$config = array(
+	        array(
+	                'field' => 'author',
+	                'label' => 'Author',
+	                'rules' => 'required'
+	        ),
+	        array(
+	                'field' => 'category_id',
+	                'label' => 'Category id',
+	                'rules' => 'required',
+	        ),
+	        array(
+	                'field' => 'title',
+	                'label' => 'Blog title',
+	                'rules' => 'required'
+	        ),
+	        array(
+	                'field' => 'editor1',
+	                'label' => 'CKEditor',
+	                'rules' => 'required'
+	        )
+		);
 
-		// call put_blog_content() from Blogs_model
-		$this->Categories_model->put_blog_content($author, $title, $category_id, $content, $created_at);
+		$this->form_validation->set_rules($config);
 
-		// set a tag for the home view, so it knows to display the view with content rather than with CKEditor
-		$data['tag'] = 'content_submitted';
+        $this->load->view('templates/header');
+        $this->load->view('blogs/create');
+        $this->load->view('templates/footer');
+	}
 
-		// go the the view of home
-		$this->load->view('templates/header');
-		$this->load->view('blogs/'.$page, $data);
-		$this->load->view('templates/footer');
+	public function process()
+	{
+		// process() processes the submitted form data. If the data from the form is valid, we insert it into the database, then redirect to the 'show' page. If the data is not valid, then redirect to the 'create' page.
+		//
+		$this->load->library('form_validation');
+
+		// if there is any invalid input, redirect to page 'create'
+		if ($this->form_validation->run() === FALSE)
+    	{
+	        $this->load->view('templates/header');
+	        $this->load->view('blogs/create');
+	        $this->load->view('templates/footer');
+    	}
+    	// if all form input data are valid, insert the data into databae, then redirect to page 'show'
+    	else
+    	{
+	        $this->blogs_model->set_blogs(); // insert the blog into the databae table 'blogs'
+	        $this->load->view('blogs/show');
+    	}
+	}
+
+
+
+	public function test()
+	{
+		$this->load->view('blogs/test');
 	}
 }
