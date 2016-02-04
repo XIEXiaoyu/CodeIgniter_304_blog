@@ -18,7 +18,7 @@
 				<p class="logo_name">Jun's blog</p>
 
 				<ul class="ceiling_nav">
-					<li><a href="">Home</a></li>
+					<li><a href="<?php echo blogs/home ?>">Home</a></li>
 					<li><a href="">About</a></li>
 					<li><a href="">Portfolio</a></li>
 				</ul>
