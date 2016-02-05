@@ -18,9 +18,9 @@
 				<p class="logo_name">Jun's blog</p>
 
 				<ul class="ceiling_nav">
-					<li><a href="<?php echo blogs/home ?>">Home</a></li>
-					<li><a href="">About</a></li>
-					<li><a href="">Portfolio</a></li>
+					<li><a href="<?php echo site_url('blogs/home'); ?>">Home</a></li>
+					<li><a href="<?php echo site_url('pages/about'); ?>">About</a></li>
+					<li><a href="http://www.pearstart.com">Portfolio</a></li>
 				</ul>
 			</div>		
     	</div>

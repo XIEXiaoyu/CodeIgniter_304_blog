@@ -61,7 +61,7 @@
 	width: 1024px;
 	margin: 0 auto;
 	overflow: hidden;
-
+	min-height: 400px;
 }
 
 .left_panel{
