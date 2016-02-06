@@ -138,6 +138,17 @@
 	width: 688px;
 }
 
+
+
+/* editing blog page*/
+.blog_form{
+	margin-top: 25px;
+}
+
+.blog_label{
+	width: 100px;
+}
+
 /* the bottom of the page */
 
 .ground_bottom{

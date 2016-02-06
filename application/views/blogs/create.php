@@ -14,15 +14,15 @@
 
 	<div class="content">
         <?php // display the CKeditor so that we can create blog
-        echo validation_errors(); 
-        echo form_open('blogs/process'); ?>
-            <label for="author">Author</label>
+        echo validation_errors(); ?>
+        <form class="blog_form" action="<?php echo site_url('blogs/process'); ?>" method="post">
+            <label class="blog_label" for="author">Author</label>
             <input type="text" name="author" value="<?php echo set_value('author'); ?>"/><br/>
 
-            <label for="category_id">Category id</label>
+            <label class="blog_label" for="category_id">Category id</label>
             <input type="text" name="category_id" value="<?php echo set_value('category_id'); ?>"/><br/>
 
-            <label for="category_id">Blog title</label>
+            <label for="form_blog_title">Blog title</label>
             <input class="form_blog_title" type="text" name="title" value="<?php echo set_value('title'); ?>"/><br/><br>
 
             <textarea name="editor1" id="editor1" class="CKeditor" value="<?php echo set_value('editor1'); ?>"></textarea>
