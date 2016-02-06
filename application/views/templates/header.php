@@ -22,6 +22,7 @@
 					<li><a href="<?php echo site_url('pages/about'); ?>">About</a></li>
 					<li><a href="http://www.pearstart.com">Portfolio</a></li>
 				</ul>
+				<a href="<?php echo site_url('admin/login'); ?>" class="btn btn-link">sign in</a>
 			</div>		
     	</div>
 
