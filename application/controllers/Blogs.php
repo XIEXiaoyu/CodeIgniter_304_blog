@@ -7,33 +7,13 @@ class Blogs extends CI_Controller {
 		$this->load->model('Blogs_model');
 		$this->load->model('Categories_model');
 		$this->load->helper('url_helper');
+		$this->load->model('Service');
 	}
 
 	public function show($page='home')
 	{
 		// Get all the categories including the category's name and its introdcution.
-		$_categories = $this->Categories_model->get_categories();
-
-		$categories = array();
-
-		foreach($_categories as $c)
-		{
-			$categories[$c->id] = $c;
-		}
-
-		$data['categories'] = $categories;
-
-		// Get all the latest blogs of all categories
-		$_latest_blogs = $this->Blogs_model->get_latest_blogs();
-
-		$latest_blogs = array();
-
-		foreach($_latest_blogs as $b)
-		{
-			$latest_blogs[$b->category_id] = $b;
-		}
-
-		$data['latest_blogs'] = $latest_blogs;
+		$data = $this->Service->get_latest_blogs();
 
 		// Get the latest blog among all the categories.
 		$data['latest_blog'] = $this->Blogs_model->get_latest_blog();
@@ -47,7 +27,11 @@ class Blogs extends CI_Controller {
 	// create a new blog
 	public function create()
 	{
+		// Get all the categories including the category's name and its introdcution.
+		$data = $this->Service->get_latest_blogs();
+
 		$this->load->helper('form');
+		$this->load->library('form_validation');
 
 		//set validation rules for the form input
 		$config = array(
@@ -76,7 +60,7 @@ class Blogs extends CI_Controller {
 		$this->form_validation->set_rules($config);
 
         $this->load->view('templates/header');
-        $this->load->view('blogs/create');
+        $this->load->view('blogs/create', $data);
         $this->load->view('templates/footer');
 	}
 
