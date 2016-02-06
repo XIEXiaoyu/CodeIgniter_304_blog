@@ -10,7 +10,7 @@ class Admin extends CI_Controller {
 
 	public function login()
 	{
-		// load the view
+		// load the view. I am using the view from this post https://gist.github.com/bMinaise/7329874
 		$this->load->view('admin/login');
 	}
 }

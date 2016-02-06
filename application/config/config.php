@@ -35,7 +35,7 @@ $config['base_url'] = '/CodeIgniter_304_blog/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
