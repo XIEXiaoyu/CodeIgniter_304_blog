@@ -23,7 +23,7 @@ class Blogs_model extends CI_model
 	}
 
 	// insert a new piece of blog into the database table 'blogs'
-	public function set_blogs()
+	public function insert_blog()
 	{
 		$this->load->helper('url');
 

@@ -8,6 +8,8 @@ class Blogs extends CI_Controller {
 		$this->load->model('Categories_model');
 		$this->load->helper('url_helper');
 		$this->load->model('Service');
+		$this->load->library('form_validation');
+		$this->load->library('session');
 	}
 
 	public function show($page='home')
@@ -30,8 +32,14 @@ class Blogs extends CI_Controller {
 		// Get all the categories including the category's name and its introdcution.
 		$data = $this->Service->get_latest_blogs();
 
-		$this->load->helper('form');
-		$this->load->library('form_validation');
+        $this->load->view('templates/header');
+        $this->load->view('blogs/create', $data);
+        $this->load->view('templates/footer');
+	}
+
+	public function process()
+	{
+		// process() processes the submitted form data. If the data from the form is valid, we insert it into the database, then redirect to the 'show' page. If the data is not valid, then redirect to the 'create' page.//
 
 		//set validation rules for the form input
 		$config = array(
@@ -59,33 +67,46 @@ class Blogs extends CI_Controller {
 
 		$this->form_validation->set_rules($config);
 
-        $this->load->view('templates/header');
-        $this->load->view('blogs/create', $data);
-        $this->load->view('templates/footer');
-	}
-
-	public function process()
-	{
-		// process() processes the submitted form data. If the data from the form is valid, we insert it into the database, then redirect to the 'show' page. If the data is not valid, then redirect to the 'create' page.
-		//
-		$this->load->library('form_validation');
-
 		// if there is any invalid input, redirect to page 'create'
 		if ($this->form_validation->run() === FALSE)
     	{
-	        $this->load->view('templates/header');
-	        $this->load->view('blogs/create');
-	        $this->load->view('templates/footer');
+	        // put the input form data into the sesseion and must be of flash type
+	        $formInputData = array(
+        		'author'  => $_POST['author'],
+        		'category_id'  => $_POST['category_id'],
+        		'title' => $_POST['title'],
+        		'editor1' => $_POST['editor1']
+			);
+
+			$this->session->set_flashdata($formInputData);
+
+			var_dump($_SESSION['author']);
+
+	  //       $author = $_POST['author'];
+	  //       $category_id = $_POST['category_id'];
+	  //       $form_blog_title = $_POST['form_blog_title'];
+	  //       $editor1 = $_POST['editor1'];
+
+	  //       $_SESSION['author'] = $author;
+			// $this->session->mark_as_flash('author');
+			// $_SESSION['category_id'] = $category_id;
+			// $this->session->mark_as_flash('category_id');
+			// $_SESSION['form_blog_title'] = $form_blog_title;
+			// $this->session->mark_as_flash('form_blog_title');
+			// $_SESSION['editor1'] = $editor1;
+			// $this->session->mark_as_flash('editor1');
+
+	        redirect('blogs/create');
     	}
+
     	// if all form input data are valid, insert the data into databae, then redirect to page 'show'
     	else
     	{
-	        $this->blogs_model->set_blogs(); // insert the blog into the databae table 'blogs'
-	        $this->load->view('blogs/show');
+	        $this->Blogs_model->insert_blog(); // insert the blog into the databae table 'blogs'
+
+	        redirect('blogs/home');// redirect to page show
     	}
 	}
-
-
 
 	public function test()
 	{

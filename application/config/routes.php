@@ -53,9 +53,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['404_override'] = '';
 // $route['translate_uri_dashes'] = FALSE;
 
-$route['blogs/home'] = 'blogs/show/home'; 
 $route['pages/about'] = 'pages/about';
+$route['blogs/home'] = 'blogs/show/home'; 
 $route['blogs/create'] = 'blogs/create';
+$route['blogs/process'] = 'blogs/process';
 $route['admin/login'] = 'admin/login';
 $route['(:any)'] = 'blogs/show/home';
 
