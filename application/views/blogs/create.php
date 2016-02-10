@@ -17,15 +17,15 @@
         echo validation_errors(); ?>
         <form class="blog_form" action="<?php echo site_url('blogs/process'); ?>" method="post">
             <label class="blog_label" for="author">Author</label>
-            <input type="text" name="author" value="<?php echo $_SESSION['author']; ?>"/><br/>
+            <input type="text" name="author" value="<?php echo $this->session->flashdata('author'); ?>"/><br/>
 
             <label class="blog_label" for="category_id">Category id</label>
-            <input type="text" name="category_id" value="<?php echo $_SESSION['category_id']; ?>"/><br/>
+            <input type="text" name="category_id" value="<?php echo $this->session->flashdata('category_id'); ?>"/><br/>
 
             <label for="form_blog_title">Blog title</label>
-            <input class="form_blog_title" type="text" name="title" value="<?php echo $_SESSION['title']; ?>"/><br/><br>
+            <input class="form_blog_title" type="text" name="title" value="<?php echo $this->session->flashdata('title'); ?>"/><br/><br>
 
-            <textarea name="editor1" id="editor1" class="CKeditor" value="<?php echo $_SESSION['editor1']; ?>"></textarea>
+            <textarea name="editor1" id="editor1" class="CKeditor" value="<?php echo $this->session->flashdata('editor1'); ?>"></textarea>
             <script>
                 // Replace the <textarea id="editor1"> with a CKEditor instance, using default configuration.
                 // CKEDITOR.replace( 'editor1' );

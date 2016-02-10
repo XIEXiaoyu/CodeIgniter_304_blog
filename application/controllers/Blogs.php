@@ -79,8 +79,8 @@ class Blogs extends CI_Controller {
 			);
 
 			$this->session->set_flashdata($formInputData);
-
-			var_dump($_SESSION['author']);
+			echo "**************************";
+			var_dump($_SESSION['category_id']);
 
 	  //       $author = $_POST['author'];
 	  //       $category_id = $_POST['category_id'];
