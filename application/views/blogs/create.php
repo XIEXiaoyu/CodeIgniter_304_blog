@@ -13,7 +13,10 @@
 	</div>
 
 	<div class="content">
-        <?php echo validation_errors(); ?>
+        <div class="validation_error">
+            <?php echo validation_errors(); ?>
+        </div>
+        
         <form class="blog_form" action="<?php echo site_url('blogs/create'); ?>" method="post">
             <label class="blog_label" for="author">Author</label>
             <input type="text" name="author" value="<?php echo set_value('author'); ?>"/><br/>

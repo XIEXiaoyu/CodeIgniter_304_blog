@@ -149,6 +149,14 @@
 	width: 100px;
 }
 
+.validation_error{
+	padding-top: 25px;
+}
+
+.validation_error p{
+	color: #DC143C;
+}
+
 /* the bottom of the page */
 
 .ground_bottom{
