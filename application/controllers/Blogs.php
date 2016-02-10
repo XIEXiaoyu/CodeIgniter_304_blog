@@ -79,22 +79,8 @@ class Blogs extends CI_Controller {
 			);
 
 			$this->session->set_flashdata($formInputData);
-			echo "**************************";
-			var_dump($_SESSION['category_id']);
-
-	  //       $author = $_POST['author'];
-	  //       $category_id = $_POST['category_id'];
-	  //       $form_blog_title = $_POST['form_blog_title'];
-	  //       $editor1 = $_POST['editor1'];
-
-	  //       $_SESSION['author'] = $author;
-			// $this->session->mark_as_flash('author');
-			// $_SESSION['category_id'] = $category_id;
-			// $this->session->mark_as_flash('category_id');
-			// $_SESSION['form_blog_title'] = $form_blog_title;
-			// $this->session->mark_as_flash('form_blog_title');
-			// $_SESSION['editor1'] = $editor1;
-			// $this->session->mark_as_flash('editor1');
+			
+			// echo validation_errors();
 
 	        redirect('blogs/create');
     	}

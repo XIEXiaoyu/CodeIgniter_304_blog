@@ -13,8 +13,7 @@
 	</div>
 
 	<div class="content">
-        <?php // display the CKeditor so that we can create blog
-        echo validation_errors(); ?>
+        <?php echo validation_errors(); ?>
         <form class="blog_form" action="<?php echo site_url('blogs/process'); ?>" method="post">
             <label class="blog_label" for="author">Author</label>
             <input type="text" name="author" value="<?php echo $this->session->flashdata('author'); ?>"/><br/>
