@@ -32,14 +32,7 @@ class Blogs extends CI_Controller {
 		// Get all the categories including the category's name and its introdcution.
 		$data = $this->Service->get_latest_blogs();
 
-        $this->load->view('templates/header');
-        $this->load->view('blogs/create', $data);
-        $this->load->view('templates/footer');
-	}
-
-	public function process()
-	{
-		// process() processes the submitted form data. If the data from the form is valid, we insert it into the database, then redirect to the 'show' page. If the data is not valid, then redirect to the 'create' page.//
+		//If the data from the form is valid, we insert it into the database, then redirect to the 'show' page. If the data is not valid, we re-populate the data to the 'create' page.
 
 		//set validation rules for the form input
 		$config = array(
@@ -67,22 +60,12 @@ class Blogs extends CI_Controller {
 
 		$this->form_validation->set_rules($config);
 
-		// if there is any invalid input, redirect to page 'create'
+		// if there is any invalid input, back to 'create' page
 		if ($this->form_validation->run() === FALSE)
     	{
-	        // put the input form data into the sesseion and must be of flash type
-	        $formInputData = array(
-        		'author'  => $_POST['author'],
-        		'category_id'  => $_POST['category_id'],
-        		'title' => $_POST['title'],
-        		'editor1' => $_POST['editor1']
-			);
-
-			$this->session->set_flashdata($formInputData);
-			
-			// echo validation_errors();
-
-	        redirect('blogs/create');
+			$this->load->view('templates/header');
+	        $this->load->view('blogs/create', $data);
+	        $this->load->view('templates/footer');
     	}
 
     	// if all form input data are valid, insert the data into databae, then redirect to page 'show'
@@ -91,11 +74,6 @@ class Blogs extends CI_Controller {
 	        $this->Blogs_model->insert_blog(); // insert the blog into the databae table 'blogs'
 
 	        redirect('blogs/home');// redirect to page show
-    	}
-	}
-
-	public function test()
-	{
-		$this->load->view('blogs/test');
+    	}        
 	}
 }
