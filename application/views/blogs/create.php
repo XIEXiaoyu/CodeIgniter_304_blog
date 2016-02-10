@@ -35,7 +35,8 @@
             </script> 
             <br>
             
-            <input class="btn btn-info" type="submit" value="Submit">          
-        </form>
+            <input class="btn btn-info" type="submit" value="Submit">
+            <a href="<?php echo site_url('blogs/home'); ?>" class="btn btn-danger btn_cancel_create" role="button">Cancle</a>
+        </form>        
 	</div>
 </div>
