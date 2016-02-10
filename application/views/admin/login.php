@@ -19,9 +19,9 @@
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
                     <h1 class="text-center login-title">Sign in edit Jun's blog</h1>
                     <div class="account-wall">
-                        <form action="<?php echo site_url('blogs/create'); ?>"class="form-signin">
-                        <input type="text" class="form-control" placeholder="Email" required autofocus>
-                        <input type="password" class="form-control" placeholder="Password" required>
+                        <form action="<?php echo site_url('admin/process'); ?>" method="post" class="form-signin">
+                        <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
+                        <input type="password" class="form-control" placeholder="Password" name="password" required>
                         <button class="btn btn-lg btn-success btn-block" type="submit">
                             Sign in</button>
                         </form>
