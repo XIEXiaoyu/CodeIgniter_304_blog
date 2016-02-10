@@ -27,15 +27,11 @@ class Blogs_model extends CI_model
 	{
 		$this->load->helper('url');
 
-		// get the time that the blog is submitted
-		$created_at = time();
-
 		$data = array(
         	'author' => $this->input->post('author'),
         	'title' => $this->input->post('title'),
         	'category_id' => $this->input->post('category_id'),
         	'content' => $this->input->post('editor1'),
-        	'created_at' => $created_at,
     	);
 		
 		// insert into the blogs table
