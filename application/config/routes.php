@@ -54,7 +54,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['translate_uri_dashes'] = FALSE;
 
 $route['pages/about'] = 'pages/about';
-$route['blogs/home'] = 'blogs/show/home'; 
+$route['blogs/home'] = 'blogs/home'; 
 $route['blogs/create'] = 'blogs/create';
 $route['admin/login'] = 'admin/login';
 $route['(:any)'] = 'blogs/show/home';

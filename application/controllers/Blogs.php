@@ -12,7 +12,7 @@ class Blogs extends CI_Controller {
 		$this->load->library('session');
 	}
 
-	public function show($page='home')
+	public function home()
 	{
 		// Get all the categories including the category's name and its introdcution.
 		$data = $this->Service->get_latest_blogs();
@@ -22,7 +22,7 @@ class Blogs extends CI_Controller {
 
 		// load the view
 		$this->load->view('templates/header');
-		$this->load->view('blogs/'.$page, $data);
+		$this->load->view('blogs/home', $data);
 		$this->load->view('templates/footer');
 	}
 
