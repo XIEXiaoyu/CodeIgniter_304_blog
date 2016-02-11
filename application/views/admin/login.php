@@ -15,13 +15,22 @@
             <div class="ceiling"></div>
 
         <div class="container">
+            <?php echo validation_errors(); ?>
+            <?php   if(isset($error_msg)) 
+                    {
+                        echo $error_msg; 
+                    }
+            ?>
             <div class="row">
                 <div class="col-sm-6 col-md-4 col-md-offset-4">
                     <h1 class="text-center login-title">Sign in edit Jun's blog</h1>
                     <div class="account-wall">
-                        <form action="<?php echo site_url('admin/process'); ?>" method="post" class="form-signin">
-                        <input type="text" class="form-control" placeholder="Email" name="email" required autofocus>
-                        <input type="password" class="form-control" placeholder="Password" name="password" required>
+                        <form action="<?php echo site_url('admin/login'); ?>" method="post" class="form-signin">
+                        
+                        <input type="text" class="form-control" placeholder="Email" name="email" value="<?php echo set_value('email'); ?>">
+                        
+                        <input type="password" class="form-control" placeholder="Password" name="password" value="<?php echo set_value('password'); ?>">
+                        
                         <button class="btn btn-lg btn-success btn-block" type="submit">
                             Sign in</button>
                         </form>
