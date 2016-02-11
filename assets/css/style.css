@@ -76,7 +76,7 @@
 	width: 300px;
 	border-right: 1px solid #00b386;
 	float: left;
-	margin: 30px 0px;
+	margin: 20px 0px;
 	padding-right: 30px;
 }
 
@@ -87,6 +87,7 @@
 .text_and_button{
 	height: 45px;
 	overflow: hidden;
+	padding-top: 10px;
 }
 
 .category{
@@ -97,13 +98,20 @@
 	line-height: 44px;
 }
 
+._1 .text_and_button
+{
+	padding-top: 0px;
+	height: 35px;
+	line-height: 45px;
+}
+
 ._5{
 	border-bottom: none;
 }
 
 .button_in_left_panel{
 	float: left;
-	margin-top: 9px;
+	margin-top: 11px;
 	height: 25px;
 	font-size:14px;
 	padding: 0;
@@ -111,13 +119,15 @@
 }
 
 .info{
-	margin-top: 0px;
+	margin-top: 10px;
 	color: #999999;
+	width: 235px;
 }
 
 .article_link{
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 25px;
+	width: 235px;
 }
 
 .content{
@@ -125,7 +135,7 @@
 	width: 724px;
 	padding-left: 35px;
 	float: left;
-	padding-top: 15px;
+	padding-top: 10px;
 }
 
 .blog_title{
