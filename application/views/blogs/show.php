@@ -13,8 +13,12 @@
 	</div>
 
 	<div class="content">
-        <!-- show the latest blog -->
-        <?php echo $latest_blog[0]->content; ?>
-
+        <!-- show all the blogs -->
+        <?php foreach($a_category_blogs as $c_b): ?>
+            <div class="blog_list">
+                <h4><?php echo $c_b->title; ?></h1>
+                <p><?php echo  $c_b->first_paragraph;?></p>
+            </div>
+        <?php endforeach; ?>
 	</div>
 </div>

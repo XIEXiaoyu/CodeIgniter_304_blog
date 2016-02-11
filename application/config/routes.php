@@ -57,7 +57,8 @@ $route['pages/about'] = 'pages/about';
 $route['blogs/home'] = 'blogs/home'; 
 $route['blogs/create'] = 'blogs/create';
 $route['admin/login'] = 'admin/login';
-$route['(:any)'] = 'blogs/show/home';
+$route['blogs/show/(:num)'] = 'blogs/show/$1';
+$route['(:any)'] = 'blogs/home';
 
 
 

@@ -37,6 +37,19 @@ class Blogs_model extends CI_model
 		// insert into the blogs table
 		$this->db->insert('blogs', $data);
 	}
+
+	// this function returns all the blogs of a certain category
+	public function get_category_blogs($category_id)
+	{	
+		$query_string = "SELECT * FROM blogs WHERE category_id = ";
+		$query_string .= $category_id;
+		$query_string .= " ORDER BY created_at DESC";
+		$query = $this->db->query($query_string);
+
+		// $query = $this->db->query('SELECT * FROM blogs WHERE category_id = '$category_id' ORDER BY created_at DESC'); This is not working
+
+		return $query->result();
+	}
 }
 
 ?>

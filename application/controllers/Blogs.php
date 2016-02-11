@@ -17,7 +17,7 @@ class Blogs extends CI_Controller {
 		// Get all the categories including the category's name and its introdcution.
 		$data = $this->Service->get_latest_blogs();
 
-		// Get the latest blog among all the categories.
+		// Get the only one latest blog among all the categories.
 		$data['latest_blog'] = $this->Blogs_model->get_latest_blog();
 
 		// load the view
@@ -81,5 +81,21 @@ class Blogs extends CI_Controller {
 
 	        redirect('blogs/home');// redirect to page show
     	}        
+	}
+
+	// this function is to show all the articles of a certain category according to the category_id provided
+	public function show($category_id)
+	{
+		// Get all the categories including the category's name and its introdcution.
+		$data = $this->Service->get_latest_blogs();
+
+		// get all the blogs of a certain category
+		$data['a_category_blogs'] = $this->Blogs_model->get_category_blogs($category_id);
+
+		// to do: need to tackle with the situation of no blogs existing.
+
+		$this->load->view('templates/header');
+	    $this->load->view('blogs/show', $data);
+	    $this->load->view('templates/footer');
 	}
 }

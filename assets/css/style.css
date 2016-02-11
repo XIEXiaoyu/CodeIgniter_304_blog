@@ -232,4 +232,12 @@
     font-weight: 400;
     display: block;
 }
+
+/* the right part of the show page */
+.blog_list
+{
+	background: #d3f8d3;
+	margin-bottom: 20px;
+}
+
 	
