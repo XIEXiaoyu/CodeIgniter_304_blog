@@ -41,13 +41,23 @@ class Blogs_model extends CI_model
 	// this function returns all the blogs of a certain category
 	public function get_category_blogs($category_id)
 	{	
-		$query_string = "SELECT * FROM blogs WHERE category_id = ";
-		$query_string .= $category_id;
-		$query_string .= " ORDER BY created_at DESC";
-		$query = $this->db->query($query_string);
+		$sql = "SELECT * FROM blogs WHERE category_id = ";
+		$sql .= $category_id;
+		$sql .= " ORDER BY created_at DESC";
+		$query = $this->db->query($sql);
 
 		// $query = $this->db->query('SELECT * FROM blogs WHERE category_id = '$category_id' ORDER BY created_at DESC'); This is not working
 
+		return $query->result();
+	}
+
+	// this function returns the corresponding blog accordin to the given 'id' value
+	public function get_blog($id)
+	{
+		$sql = "SELECT * FROM blogs WHERE id = ";
+		$sql .= $id;
+		$query = $this->db->query($sql);
+		
 		return $query->result();
 	}
 }

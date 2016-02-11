@@ -98,4 +98,18 @@ class Blogs extends CI_Controller {
 	    $this->load->view('blogs/show', $data);
 	    $this->load->view('templates/footer');
 	}
+
+	// the parameter $id is the 'id' value in the database table 'blogs'. Given an 'id', we will get the blog from the database.
+	public function blog($id)
+	{
+		// Get all the categories including the category's name and its introdcution.
+		$data = $this->Service->get_latest_blogs();
+		
+		// get the blog by id
+		$data['blog'] = $this->Blogs_model->get_blog($id);
+
+		$this->load->view('templates/header');
+	    $this->load->view('blogs/blog', $data);
+	    $this->load->view('templates/footer');
+	}
 }

@@ -233,11 +233,23 @@
     display: block;
 }
 
+
+
 /* the right part of the show page */
+.all_blogs
+{
+	margin-top: 22px;
+}
+
 .blog_list
 {
-	background: #d3f8d3;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
+}
+
+.blog_list p:nth-child(1)
+{
+	font-size: 18px;
+	color: blue;
 }
 
 	
