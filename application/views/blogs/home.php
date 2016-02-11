@@ -4,7 +4,7 @@
         <div class="_<?php echo $c->id; ?> per_category">
             <div class="text_and_button">
                 <p class="category"><?php echo $c->category; ?></p>
-                <button type="button" class="btn btn-success button_in_left_panel">view all</button> 
+                <a href="#" class="btn btn-link button_in_left_panel" role="button">More</a>               
             </div>
             <p class="info"><?php echo $c->info; ?></p> 
             <a class="article_link" href="latest_article"><?php echo $latest_blogs[$c->id]->title; ?></a>
