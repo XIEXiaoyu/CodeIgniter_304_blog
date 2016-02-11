@@ -29,6 +29,12 @@ class Blogs extends CI_Controller {
 	// create a new blog
 	public function create()
 	{
+		//check if the user has signin or not, only signed in user has the authority to view the create page. If the user is not signed in and visit the 'create' page, redirect the user to the sign in page. 
+		if(!isset($_SESSION['email']))
+		{
+			redirect('admin/login');
+		}
+
 		// Get all the categories including the category's name and its introdcution.
 		$data = $this->Service->get_latest_blogs();
 
