@@ -7,7 +7,7 @@
                 <a href="<?php echo site_url($c->link_all_route); ?>" class="btn btn-link button_in_left_panel" role="button">More</a>               
             </div>
             <p class="info"><?php echo $c->info; ?></p> 
-            <a class="article_link" href="latest_article"><?php echo $latest_blogs[$c->id]->title; ?></a>
+            <a class="article_link" href="<?php echo site_url('blogs/blog') . '/' . $latest_blogs[$c->id]->id ?>"><?php echo $latest_blogs[$c->id]->title; ?></a>
         </div>
         <?php endforeach; ?>
 	</div>
