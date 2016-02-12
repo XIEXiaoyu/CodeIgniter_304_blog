@@ -122,4 +122,17 @@ class Blogs extends CI_Controller {
 	    $this->load->view('blogs/blog', $data);
 	    $this->load->view('templates/footer');
 	}
+
+	public function edit($id)
+	{
+		// Get all the categories including the category's name and its introdcution.
+		$data = $this->Service->get_latest_blogs();
+
+		// get the record of this blog with this 'id' from database table 'blogs'
+		$data['edit_blog'] = $this->Blogs_model->get_blog($id);
+
+		$this->load->view('templates/header', $data);
+	    $this->load->view('blogs/edit', $data);
+	    $this->load->view('templates/footer');
+	}
 }

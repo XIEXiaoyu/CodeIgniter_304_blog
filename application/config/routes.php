@@ -59,6 +59,8 @@ $route['blogs/create'] = 'blogs/create';
 $route['admin/login'] = 'admin/login';
 $route['blogs/show/(:num)'] = 'blogs/show/$1';
 $route['blogs/blog/(:num)'] = 'blogs/blog/$1';
+$route['blogs/edit/(:num)'] = 'blogs/edit/$1';
+
 $route['(:any)'] = 'blogs/home';
 
 
