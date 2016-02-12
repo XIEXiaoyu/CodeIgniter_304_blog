@@ -19,14 +19,19 @@
 
 				<ul class="ceiling_nav">
 					<li><a href="<?php echo site_url('blogs/home'); ?>">Home</a></li>
-					<li><a href="<?php echo site_url('pages/about'); ?>">About</a></li>
+					<li><a href="<?php echo site_url('blogs/about'); ?>">About</a></li>
 					<li><a href="http://www.pearstart.com">Portfolio</a></li>
 				</ul>
+
 				<?php if(isset($_SESSION['email'])):?>
-					<a href="<?php echo site_url('admin/logout'); ?>" class="btn btn-link">sign out</a>
+					<a href="<?php echo site_url('admin/logout'); ?>" class="btn btn-link">Sign out</a>
 				<?php else:?>
-					<a href="<?php echo site_url('admin/login'); ?>" class="btn btn-link">sign in</a>
+					<a href="<?php echo site_url('admin/login'); ?>" class="btn btn-link">Sign in</a>
 				<?php endif;?>
+
+				<?php if(isset($_SESSION['email'])){?>
+					<a href="<?php echo site_url('blogs/create'); ?>" class="btn btn-link header_create">Create</a>
+				<?php } ?>
 			</div>		
     	</div>
 

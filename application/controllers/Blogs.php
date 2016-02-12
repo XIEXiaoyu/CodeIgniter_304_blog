@@ -26,6 +26,16 @@ class Blogs extends CI_Controller {
 		$this->load->view('templates/footer');
 	}
 
+	public function about()
+    {
+    	// Get all the categories including the category's name and its introdcution.
+		$data = $this->Service->get_latest_blogs();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/about', $data);
+        $this->load->view('templates/footer');
+    }
+
 	// create a new blog
 	public function create()
 	{
