@@ -21,7 +21,7 @@ class Blogs extends CI_Controller {
 		$data['latest_blog'] = $this->Blogs_model->get_latest_blog();
 
 		// load the view
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 		$this->load->view('blogs/home', $data);
 		$this->load->view('templates/footer');
 	}
@@ -69,8 +69,8 @@ class Blogs extends CI_Controller {
 		// if there is any invalid input, back to 'create' page
 		if ($this->form_validation->run() === FALSE)
     	{
-			$this->load->view('templates/header');
-	        $this->load->view('blogs/create', $data);
+			$this->load->view('templates/header', $data);
+	        $this->load->view('blogs/create');
 	        $this->load->view('templates/footer');
     	}
 
@@ -94,7 +94,7 @@ class Blogs extends CI_Controller {
 
 		// to do: need to tackle with the situation of no blogs existing.
 
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 	    $this->load->view('blogs/show', $data);
 	    $this->load->view('templates/footer');
 	}
@@ -108,7 +108,7 @@ class Blogs extends CI_Controller {
 		// get the blog by id
 		$data['blog'] = $this->Blogs_model->get_blog($id);
 
-		$this->load->view('templates/header');
+		$this->load->view('templates/header', $data);
 	    $this->load->view('blogs/blog', $data);
 	    $this->load->view('templates/footer');
 	}
